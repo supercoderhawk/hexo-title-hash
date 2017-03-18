@@ -1,0 +1,27 @@
+{
+  "name": "hexo-title-hash",
+  "version": "1.0.0",
+  "description": "transform article title into hash code",
+  "main": "index.js",
+  "scripts": {
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xyb930826/hexo-title-hash.git"
+  },
+  "keywords": [
+    "hash",
+    "hexo",
+    "title"
+  ],
+  "author": "superfeex",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xyb930826/hexo-title-hash/issues"
+  },
+  "homepage": "https://github.com/xyb930826/hexo-title-hash#readme",
+  "dependencies": {
+    "hashids": "^1.1.1"
+  }
+}
