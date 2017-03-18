@@ -10,16 +10,14 @@ hexo.extend.filter.register('before_post_render', function (data) {
     return data;
   }
 
-  var digits = config.hash_title.digits
+  var digits = config.hash_title.digits || 8
   var article = front.parse(data.raw)
-  // console.log("原始data:"+postStr);
   var title = data.title
 
-  var hash = new hashids('',digits)
-  article.permalink = hash.encode(title)
-  var postStr = front.stringify(article);
-  // postStr = '---\n' + postStr;
-  fs.writeFileSync(data.full_source, article, 'utf-8');
+  // 使用当前秒数作为种子创建hash值
+  var hash = new hashids(Date.now().toString(),digits)
+  article.permalink = hash.encode(1)
 
+  fs.writeFileSync(data.full_source, '---\n' + front.stringify(article), 'utf-8');
   return data
 })
